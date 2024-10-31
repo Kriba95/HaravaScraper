@@ -1,0 +1,105 @@
+
+.active {
+  background-color: white;
+  color: black;
+  border-top: 4px solid #34D399; 
+  border-radius: 0.25rem; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+.app-title {
+  text-align: center;
+  color: #4a90e2;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.summary-section {
+  margin-bottom: 15px;
+}
+
+.email-count {
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.input-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.button-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 48%;
+  padding: 10px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #357abf;
+}
+
+.start-btn {
+  background-color: #28a745;
+}
+
+.stop-btn {
+  background-color: #dc3545;
+}
+
+.preview-btn {
+  background-color: #ffc107;
+}
+
+.clipboard-btn, .export-btn {
+  background-color: #6c757d;
+}
+
+.locate-btn {
+  background-color: #17a2b8;
+}
+
+.process-btn {
+  background-color: #007bff;
+}
+
+.clear-btn {
+  background-color: #ff5722;
+}
+
+.url-processing {
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}

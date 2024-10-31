@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Harava Scraper",
+  "short_name": "HaravaScraper",
+  "version": "1.0",
+  "author": "Wadelmasiru",
+  "description": "A Chrome extension designed to scrape, preview, and export email addresses found on web pages.",
+  "permissions": [
+    "windows",
+    "webNavigation",
+    "alarms",
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "web_accessible_resources": [{
+    "resources": ["js/settings.html", "pages/preview.html"],
+    "matches": ["<all_urls>"]
+  }],
+  "commands": {
+    "sendMessage": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1",
+        "mac": "Command+Shift+1"
+      },
+      "description": "Send a message from background"
+    }
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_popup": "pages/popup.html",
+    "default_icon": {
+      "16": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [{
+    "matches": [
+      "<all_urls>"
+    ],
+    "js": [
+      "js/content.js"
+    ],
+    "all_frames": true
+  }]
+}

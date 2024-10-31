@@ -1,0 +1,114 @@
+<main class="">
+
+  <div class="grid grid-cols-2 gap-4 my-4">
+    <div>
+      <div class="grid grid-cols-1 ">
+        <h1 class="text-2xl font-bold">Email Scraper</h1>
+        <span>Emails Detected on This Page: <span id="contactThisCount"
+            class="email-count font-semibold">0</span></span>
+        <div id="emailSummary" class="summary-section">
+          <span>Emails in Memory: <span id="contactCount" class="email-count font-semibold">0</span></span>
+        </div>
+        <button id="highlightButton" class="highlight-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">
+          Highlight
+        </button>
+      </div>
+    </div>
+
+
+    <div class="input-container  ">
+      <div id="contactSummary" class="summary-section">
+
+        <div class="input-container">
+          <label for="minimumDelay" title="Specify the minimum time to wait between scrapes."
+            class="input-label block text-sm font-medium text-gray-700">Minimum Delay (seconds):</label>
+          <p>
+
+            <span id="minDelayValue" class="font-semibold">5</span> seconds
+          </p>
+          <input type="range" id="minimumDelay" min="1" max="60" value="5" class="slider ">
+        </div>
+
+        <div class="input-container">
+          <label for="maximumDelay" title="Specify the maximum time to wait between scrapes."
+            class="input-label block text-sm font-medium text-gray-700">Maximum Delay (seconds):</label>
+          <p> <span id="maxDelayValue" class="font-semibold">5</span> seconds</p>
+          <input type="range" id="maximumDelay" min="1" max="60" value="5" class="slider">
+        </div>
+      </div>
+      <label for="numberOfRuns" title="Specify how many times to repeat the scraping process."
+        class="input-label block text-sm font-medium text-gray-700">Number of runs:</label>
+      <input type="number" id="numberOfRuns" placeholder="8"
+        class="input-field bg-gray-100 border border-gray-300 rounded-md shadow-sm p-3 mt-1 block w-full focus:outline-none focus:ring focus:ring-gray-300" />
+
+    </div>
+
+
+
+  </div>
+
+
+  <div>
+
+
+  </div>
+
+  <!-- Input Fields Grid for specified fields -->
+  <div class="grid grid-cols-2 gap-4 my-4">
+
+    <div class="input-container">
+      <label for="selectorAButtons" title="Enter a CSS selector to target the articles."
+        class="input-label block text-sm font-medium text-gray-700">Article Selector:</label>
+      <input id="selectorAButtons" placeholder="e.g. div.123 > span > a"
+        class="input-field bg-gray-100 border border-gray-300 rounded-md shadow-sm p-3 mt-1 block w-full focus:outline-none focus:ring focus:ring-gray-300" />
+    </div>
+
+    <div class="input-container">
+      <label for="selector" title="Enter a CSS selector for the next page button."
+        class="input-label block text-sm font-medium text-gray-700">Next Page Selector:</label>
+      <input id="selector" placeholder="e.g. .paging-next > a"
+        class="input-field bg-gray-100 border border-gray-300 rounded-md shadow-sm p-3 mt-1 block w-full focus:outline-none focus:ring focus:ring-gray-300" />
+    </div>
+
+    <button id="locateArticleButton" class="btn locate-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
+      title="Find URLs and highlight articles">Locate Links</button>
+    <button id="locateNextButton" class="btn locate-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
+      title="Find and alert Pagination">Locate Next Button</button>
+  </div>
+
+  <div class="button-group my-4">
+    <label for="locateArticleButton" class="input-label block text-sm font-medium text-gray-700">To start scraping, you
+      must locate the next button.*</label>
+  </div>
+
+
+  <div class="button-group my-4 flex flex-col space-y-2">
+    <div class="grid grid-cols-2 gap-4 ">
+      <button id="startScraping" class="btn start-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500"
+        title="Begin the scraping process">Start Scraping</button>
+      <button id="stopScraping" class="btn stop-btn bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500"
+        title="Stop the scraping process CTRL+SHIFT+Y">Stop Scraping</button>
+    </div>
+
+    <button id="previewEmails" class="btn preview-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
+      title="Preview all scraped emails">Preview Emails</button>
+  </div>
+
+
+  <div class="button-group my-4">
+    <div class="button-flex flex space-x-2">
+      <button id="copyToClipboard"
+        class="btn clipboard-btn bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400"
+        style="display: none;">Copy to Clipboard</button>
+      <button id="exportCSV" class="btn export-btn bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400"
+        style="display: none;">Export to CSV</button>
+    </div>
+  </div>
+
+  <div class="my-8">
+    <!-- <button id="clearEmails" class="btn clear-btn bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+    title="Clear All Stored Emails">Clear Emails</button> -->
+
+    <div id="emails"></div>
+  </div>
+</main>

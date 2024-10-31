@@ -1,0 +1,134 @@
+
+<div class="grid grid-cols-2 gap-4 my-4">
+  <div class=" ">
+
+
+    <h1 class="text-2xl  font-bold">Advanced Scraper</h1>
+    <p class="mb-4 text-gray-700">Edit settings for scraping by selecting from the options below.</p>
+
+
+
+  </div>
+
+  <div id="contactSummary" class="summary-section">
+    <div class="input-container">
+      <label for="minimumDelay" title="Specify the minimum time to wait between scrapes."
+        class="input-label block text-sm font-medium text-gray-700">Minimum Delay (seconds):</label>
+      <p>
+
+        <span id="minDelayValue" class="font-semibold">5</span> seconds
+      </p>
+      <input type="range" id="minimumDelay" min="1" max="60" value="5" class="slider ">
+    </div>
+
+    <div class="input-container">
+      <label for="maximumDelay" title="Specify the maximum time to wait between scrapes."
+        class="input-label block text-sm font-medium text-gray-700">Maximum Delay (seconds):</label>
+      <p> <span id="maxDelayValue" class="font-semibold">5</span> seconds</p>
+      <input type="range" id="maximumDelay" min="1" max="60" value="5" class="slider">
+    </div>
+    <div class="input-group mb-4">
+      <label for="numberOfRuns" class="block text-sm font-medium text-gray-700">Number of pages:</label>
+      <input type="number" id="numberOfRuns" placeholder="8"
+        class="input-field bg-gray-100 border border-gray-300 rounded-md shadow-sm p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-300" />
+    </div>
+  </div>
+</div>
+
+
+
+<div class="grid grid-cols-2 gap-4">
+  <div id="linkLocatorDiv" class="mb-6">
+    <label class="input-label block text-sm font-medium text-gray-700"
+      title="Input a CSS selector to find the links you want to scrape from the current page.">Locate Links:</label>
+
+    <input id="selectorAButtons" placeholder="e.g. div.123 > span > a"
+      class="input-field bg-gray-100 border border-gray-300 rounded-md shadow-sm p-2 w-full mb-2 focus:outline-none focus:ring-2 focus:ring-gray-300" />
+    <button  class="highlight-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
+      id="locateArticleButton">Locate Links</button>
+    <button  class="highlight-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-red-500"
+      id="RemoveLinks">Remove</button>
+  </div>
+  <div class="mb-6">
+    <label title='Specify the selector for the "Next" button in pagination to navigate through multiple
+    pages.' class="input-label block text-sm font-medium text-gray-700">Locate Next Button</label>
+
+    <input id="selector" placeholder="e.g. .paging-next > a"
+      class="input-field bg-gray-100 border border-gray-300 rounded-md shadow-sm p-2 w-full mb-2 focus:outline-none focus:ring-2 focus:ring-gray-300" />
+    <button id="locateNextButton" class="tab-button bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-blue-500"
+      title="Find and alert Pagination">Locate Next Button</button>
+  </div>
+
+
+</div>
+
+
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Locate Element</h2>
+  <p class="mb-2 text-gray-600">Define additional elements to locate and scrape for more comprehensive data.</p>
+  <div class="mb-2">
+    <div id="inputContainer"></div>
+    <button class="button bg-gray-800 text-white mt-4 px-4 py-2 rounded-md hover:bg-green-500" id="addButton">+ Add</button>
+  </div>
+</div>
+
+
+
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Step</h2>
+  <p class="mb-2 text-gray-600">Enter the necessary click for scraping after a link or article has been fetched.</p>
+
+  <div id="stepsContainer">
+    <input id="stepsSelector" placeholder="e.g. .step-next > a"
+      class="input-field bg-gray-100 border border-gray-300 rounded-md shadow-sm p-2 w-full mb-2 focus:outline-none focus:ring-2 focus:ring-gray-300" />
+    <button id="locateNextStepButton" class="tab-button bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-blue-500"
+      title="Locate and alert the next clickable element in the article">Locate Click in Article</button>
+    <button id="removeButton" class="button bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-red-500"
+      style="display: none;">Remove</button>
+  </div>
+</div>
+
+<div class="overflow max-h-72 overflow-y-auto border border-gray-300 p-4 mb-6">
+  <table id="contactTable" class="table-auto w-full text-left">
+    <thead id="contactTableHead">
+      <tr>
+        <th class="border-b bg-gray-100 p-2">Email</th>
+        <th class="border-b bg-gray-100 p-2">Source URL</th>
+        <th class="border-b bg-gray-100 p-2">Title</th>
+      </tr>
+    </thead>
+    <tbody id="contactTableBody">
+      <!-- Table data goes here -->
+    </tbody>
+  </table>
+</div>
+<!-- 
+<div class="mb-6">
+  <div class="input-group mb-4">
+    <label for="minimumDelay" class="block text-sm font-medium text-gray-700">Minimum Delay (seconds):</label>
+    <input type="number" id="minimumDelay" placeholder="12"
+      class="input-field bg-gray-100 border border-gray-300 rounded-md shadow-sm p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-300" />
+  </div>
+
+  <div class="input-group mb-4">
+    <label for="maximumDelay" class="block text-sm font-medium text-gray-700">Maximum Delay (seconds):</label>
+    <input type="number" id="maximumDelay" placeholder="5"
+      class="input-field bg-gray-100 border border-gray-300 rounded-md shadow-sm p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-300" />
+  </div>
+
+
+</div> -->
+<button id="unblockLinksButton">Unblock Links</button>
+
+<button id="blockLinksButton">Estä linkit</button>
+
+<div class="mb-6">
+  <button class="button bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-red-500" id="ClearContacts"
+    title="Start">Clear Old Contacts</button>
+</div>
+
+<h2 class="text-xl font-semibold mb-2">Start</h2>
+<button class="button bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500" id="startContactScraping"
+  title="Start">Start</button>
+
+<div id="selectorDropdown" class="mt-6"></div>
